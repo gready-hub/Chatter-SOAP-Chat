@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <definitions 
+ xmlns="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+ xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ServerService" targetNamespace="http://server.chat/" xmlns:tns="http://server.chat/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:fi="http://java.sun.com/xml/ns/wsit/2006/09/policy/fastinfoset/service" xmlns:tcp="http://java.sun.com/xml/ns/wsit/2006/09/policy/soaptcp/service" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sc="http://schemas.sun.com/2006/03/wss/server" xmlns:wspp="http://java.sun.com/xml/ns/wsit/policy" xmlns:t="http://docs.oasis-open.org/ws-sx/ws-trust/200512" 
+ >
+    <message name="join"/>
+    <message name="joinResponse"/>
+    <message name="broadcast"/>
+    <message name="broadcastResponse"/>
+    <message name="privateMessage"/>
+    <message name="privateMessageResponse"/>
+    <message name="adminLogon"/>
+    <message name="adminLogonResponse"/>
+    <message name="adminLogoff"/>
+    <message name="adminLogoffResponse"/>
+    <message name="listen"/>
+    <message name="listenResponse"/>
+    <message name="leave"/>
+    <message name="leaveResponse"/>
+    <message name="connectedUsers"/>
+    <message name="connectedUsersResponse"/>
+    <portType name="Server">
+        <operation name="join">
+            <input message="tns:join"/>
+            <output message="tns:joinResponse"/>
+        </operation>
+        <operation name="broadcast">
+            <input message="tns:broadcast"/>
+            <output message="tns:broadcastResponse"/>
+        </operation>
+        <operation name="privateMessage">
+            <input message="tns:privateMessage"/>
+            <output message="tns:privateMessageResponse"/>
+        </operation>
+        <operation name="adminLogon">
+            <input message="tns:adminLogon"/>
+            <output message="tns:adminLogonResponse"/>
+        </operation>
+        <operation name="adminLogoff">
+            <input message="tns:adminLogoff"/>
+            <output message="tns:adminLogoffResponse"/>
+        </operation>
+        <operation name="listen">
+            <input message="tns:listen"/>
+            <output message="tns:listenResponse"/>
+        </operation>
+        <operation name="leave">
+            <input message="tns:leave"/>
+            <output message="tns:leaveResponse"/>
+        </operation>
+        <operation name="connectedUsers">
+            <input message="tns:connectedUsers"/>
+            <output message="tns:connectedUsersResponse"/>
+        </operation>
+    </portType>
+    <binding name="ServerPortBinding" type="tns:Server">
+        <operation name="join">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="broadcast">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="privateMessage">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="adminLogon">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="adminLogoff">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="listen">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="leave">
+            <input></input>
+            <output></output>
+        </operation>
+        <operation name="connectedUsers">
+            <input></input>
+            <output></output>
+        </operation>
+    </binding>
+    <service name="ServerService">
+        <port name="ServerPort" binding="tns:ServerPortBinding"/>
+    </service>
+</definitions>
